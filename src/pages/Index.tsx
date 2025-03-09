@@ -1,20 +1,24 @@
-
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "@/components/Hero";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
+  useEffect(() => {
+    console.log("Index component mounted");
+  }, []);
+
   return (
-    <div className="page-transition">
-      {/* Hero section */}
+    <div className="page-transition" style={{ border: "2px solid red" }}>
+      <div className="p-4 bg-destructive text-destructive-foreground">
+        Debug message: If you can see this, the Index component is rendering
+      </div>
+      
       <Hero />
       
-      {/* Featured products section */}
       <FeaturedProducts />
       
-      {/* Categories section */}
       <section className="py-20 bg-secondary">
         <div className="container-custom">
           <h2 className="text-center mb-16 animate-slide-in opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
@@ -22,7 +26,6 @@ const Index = () => {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* T-Shirts */}
             <CategoryCard 
               title="T-Shirts"
               image="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800"
@@ -30,7 +33,6 @@ const Index = () => {
               index={0}
             />
             
-            {/* Jeans */}
             <CategoryCard 
               title="Jeans"
               image="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800"
@@ -38,7 +40,6 @@ const Index = () => {
               index={1}
             />
             
-            {/* Sweaters */}
             <CategoryCard 
               title="Sweaters"
               image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800"
@@ -46,7 +47,6 @@ const Index = () => {
               index={2}
             />
             
-            {/* Accessories */}
             <CategoryCard 
               title="Accessories"
               image="https://images.unsplash.com/photo-1606076165932-a8ec9315443b?auto=format&fit=crop&w=800"
@@ -57,7 +57,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Sustainability section */}
       <section className="py-24 md:py-32">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
@@ -91,7 +90,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Newsletter section */}
       <section className="py-24 bg-secondary">
         <div className="container-custom max-w-3xl text-center">
           <h2 className="mb-6">Stay Connected</h2>
@@ -119,15 +117,7 @@ const Index = () => {
   );
 };
 
-interface CategoryCardProps {
-  title: string;
-  image: string;
-  href: string;
-  index: number;
-}
-
 const CategoryCard = ({ title, image, href, index }: CategoryCardProps) => {
-  // Calculate animation delay based on index
   const animationDelay = `${0.2 + index * 0.1}s`;
   
   return (
@@ -153,5 +143,12 @@ const CategoryCard = ({ title, image, href, index }: CategoryCardProps) => {
     </Link>
   );
 };
+
+interface CategoryCardProps {
+  title: string;
+  image: string;
+  href: string;
+  index: number;
+}
 
 export default Index;
