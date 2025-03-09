@@ -61,7 +61,7 @@ const Navbar = () => {
           to="/" 
           className="text-2xl font-medium tracking-tight transition-opacity duration-200 hover:opacity-80"
         >
-          ESSENCE
+          Rmس Abayas
         </Link>
 
         {/* Desktop Navigation */}

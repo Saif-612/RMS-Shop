@@ -13,11 +13,11 @@ const Hero = () => {
           </span>
           
           <h1 className="mb-6 animate-fade-in opacity-0" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
-            Timeless Elegance in Contemporary Design
+            Elegant Abayas for Modern Women
           </h1>
           
           <p className="text-lg text-muted-foreground mb-8 animate-fade-in opacity-0" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
-            Discover our curated collection of premium clothing essentials, crafted with exceptional attention to detail and sustainable materials.
+            Discover our curated collection of premium abayas, crafted with exceptional attention to detail and sustainable materials.
           </p>
           
           <div className="flex justify-center space-x-4 animate-fade-in opacity-0" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>

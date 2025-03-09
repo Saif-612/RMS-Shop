@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Brand column */}
           <div className="md:col-span-1">
             <Link to="/" className="text-2xl font-medium tracking-tight block mb-4">
-              ESSENCE
+              Rmس Abayas
             </Link>
             <p className="text-muted-foreground mb-6 max-w-xs">
               Contemporary clothing essentials crafted with exceptional materials and timeless design.
@@ -136,7 +136,7 @@ const Footer = () => {
         
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © {new Date().getFullYear()} ESSENCE. All rights reserved.
+            © {new Date().getFullYear()} Rmس Abayas. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center space-x-4 text-sm">
             <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">
