@@ -10,11 +10,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="page-transition" style={{ border: "2px solid red" }}>
-      <div className="p-4 bg-destructive text-destructive-foreground">
-        Debug message: If you can see this, the Index component is rendering
-      </div>
-      
+    <div className="page-transition">
       <Hero />
       
       <FeaturedProducts />
