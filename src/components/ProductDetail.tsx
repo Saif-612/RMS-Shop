@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { ShoppingBag, Heart, ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ShoppingBag, Heart, ArrowLeft, ArrowRight, Check, Plus, Minus } from "lucide-react";
 import { toast } from "sonner";
 import { Link, useNavigate } from "react-router-dom";
 import { Product, CartItem } from "@/lib/data";
