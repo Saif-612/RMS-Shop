@@ -28,22 +28,22 @@ const Hero = () => {
 
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <span className="inline-block py-1 px-3 mb-6 text-xs font-medium tracking-wider uppercase border border-primary/40 text-primary rounded-full animate-fade-in opacity-0 bg-background/70 backdrop-blur-sm" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
+          <span className="inline-block py-1 px-3 mb-6 text-xs tracking-wider uppercase border border-primary/40 text-primary rounded-full animate-fade-in opacity-0 bg-background/70 backdrop-blur-sm" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
             NEW COLLECTION
           </span>
           
-          <h1 className="mb-6 animate-fade-in opacity-0 font-display text-foreground text-shadow-sm" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
+          <h1 className="mb-6 animate-fade-in opacity-0 font-display text-foreground text-shadow-sm font-normal" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
             Elegant Abayas for Modern Women
           </h1>
           
-          <p className="text-lg text-foreground font-medium mb-8 animate-fade-in opacity-0 text-shadow-sm" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
+          <p className="text-lg text-foreground mb-8 animate-fade-in opacity-0 text-shadow-sm font-normal" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
             Discover our curated collection of premium abayas, crafted with exceptional attention to detail and sustainable materials.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 animate-fade-in opacity-0" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
             <Link 
               to="/products" 
-              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-primary text-primary-foreground font-medium transition-all hover:bg-primary/90 hover:shadow-md"
+              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-primary text-primary-foreground font-normal transition-all hover:bg-primary/90 hover:shadow-md"
             >
               Shop Collection
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -51,7 +51,7 @@ const Hero = () => {
             
             <Link 
               to="/about" 
-              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-accent/30 text-foreground font-medium transition-all hover:bg-accent/50 hover:shadow-md"
+              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-accent/30 text-foreground font-normal transition-all hover:bg-accent/50 hover:shadow-md"
             >
               Our Story
             </Link>
@@ -77,7 +77,7 @@ const Hero = () => {
           
           {/* Floating text badge */}
           <div className="absolute bottom-8 right-8 bg-background/90 backdrop-blur-sm py-3 px-6 rounded-full shadow-lg transform rotate-2 border border-primary/20">
-            <span className="font-display text-lg text-primary">New Season 2023</span>
+            <span className="font-display text-lg text-primary font-normal">New Season 2023</span>
           </div>
         </div>
       </div>
