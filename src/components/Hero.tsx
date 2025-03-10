@@ -28,36 +28,33 @@ const Hero = () => {
 
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Content container with slight background for better readability */}
-          <div className="bg-background/80 backdrop-blur-sm p-8 rounded-xl shadow-sm border border-primary/10">
-            <span className="inline-block py-1 px-3 mb-6 text-xs font-medium tracking-wider uppercase border border-primary/40 text-primary rounded-full animate-fade-in opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
-              NEW COLLECTION
-            </span>
+          <span className="inline-block py-1 px-3 mb-6 text-xs font-medium tracking-wider uppercase border border-primary/40 text-primary rounded-full animate-fade-in opacity-0 bg-background/70 backdrop-blur-sm" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
+            NEW COLLECTION
+          </span>
+          
+          <h1 className="mb-6 animate-fade-in opacity-0 font-display text-foreground text-shadow-sm" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
+            Elegant Abayas for Modern Women
+          </h1>
+          
+          <p className="text-lg text-foreground font-medium mb-8 animate-fade-in opacity-0 text-shadow-sm" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
+            Discover our curated collection of premium abayas, crafted with exceptional attention to detail and sustainable materials.
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-4 animate-fade-in opacity-0" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
+            <Link 
+              to="/products" 
+              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-primary text-primary-foreground font-medium transition-all hover:bg-primary/90 hover:shadow-md"
+            >
+              Shop Collection
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
             
-            <h1 className="mb-6 animate-fade-in opacity-0 font-display text-foreground" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
-              Elegant Abayas for Modern Women
-            </h1>
-            
-            <p className="text-lg text-foreground mb-8 animate-fade-in opacity-0" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
-              Discover our curated collection of premium abayas, crafted with exceptional attention to detail and sustainable materials.
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-4 animate-fade-in opacity-0" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
-              <Link 
-                to="/products" 
-                className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-primary text-primary-foreground font-medium transition-all hover:bg-primary/90 hover:shadow-md"
-              >
-                Shop Collection
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-              
-              <Link 
-                to="/about" 
-                className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-accent/30 text-foreground font-medium transition-all hover:bg-accent/50 hover:shadow-md"
-              >
-                Our Story
-              </Link>
-            </div>
+            <Link 
+              to="/about" 
+              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-accent/30 text-foreground font-medium transition-all hover:bg-accent/50 hover:shadow-md"
+            >
+              Our Story
+            </Link>
           </div>
         </div>
       </div>
