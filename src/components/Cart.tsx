@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import { X, Minus, Plus, ShoppingBag, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartItem } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
@@ -9,6 +8,7 @@ import { toast } from "sonner";
 const Cart = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   // Load cart items from localStorage
   useEffect(() => {
@@ -59,6 +59,15 @@ const Cart = () => {
     toast.success("Item removed", {
       description: `Removed ${itemName} from your cart`,
     });
+  };
+
+  // Handle checkout
+  const handleCheckout = () => {
+    if (cartItems.length === 0) {
+      toast.error("Your cart is empty");
+      return;
+    }
+    navigate("/checkout");
   };
 
   // Empty cart
@@ -187,11 +196,17 @@ const Cart = () => {
             
             {/* Checkout button */}
             <button 
+              onClick={handleCheckout}
               className="w-full py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors flex items-center justify-center"
             >
               Proceed to Checkout
               <ArrowRight className="ml-2 h-4 w-4" />
             </button>
+            
+            {/* Indian Rupee price conversion */}
+            <div className="text-sm text-center mt-2 text-muted-foreground">
+              Approximately ₹{(total * 83).toFixed(2)} INR
+            </div>
             
             {/* Continue shopping link */}
             <Link 
