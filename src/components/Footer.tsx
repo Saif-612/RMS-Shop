@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Instagram, Twitter, Facebook, ArrowRight } from "lucide-react";
@@ -10,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="md:col-span-1">
-            <Link to="/" className="text-2xl font-medium tracking-tight block mb-4">
+            <Link to="/" className="text-2xl font-display font-medium tracking-tight block mb-4">
               Rmس Abayas
             </Link>
             <p className="text-muted-foreground mb-6 max-w-xs">

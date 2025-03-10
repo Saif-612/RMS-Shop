@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -58,6 +57,10 @@ export default {
           foreground: 'hsl(var(--card-foreground))'
         },
       },
+      fontFamily: {
+        sans: ['Southard', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['Luthon', 'serif'],
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
@@ -107,20 +110,6 @@ export default {
         'spacing': 'margin, padding',
         'width': 'width',
         'filter': 'filter',
-      },
-      fontFamily: {
-        sans: [
-          'ui-sans-serif', 
-          'system-ui', 
-          '-apple-system', 
-          'BlinkMacSystemFont', 
-          'San Francisco', 
-          'Segoe UI', 
-          'Roboto', 
-          'Helvetica Neue', 
-          'Arial', 
-          'sans-serif'
-        ],
       },
     }
   },

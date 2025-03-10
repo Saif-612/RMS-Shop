@@ -12,7 +12,7 @@ const Hero = () => {
             New Collection
           </span>
           
-          <h1 className="mb-6 animate-fade-in opacity-0" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
+          <h1 className="mb-6 animate-fade-in opacity-0 font-display" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
             Elegant Abayas for Modern Women
           </h1>
           

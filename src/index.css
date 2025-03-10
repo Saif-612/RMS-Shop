@@ -3,6 +3,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Luthon Southard Font Duo */
+@font-face {
+  font-family: 'Luthon';
+  src: url('https://fonts.cdnfonts.com/s/81131/Luthon-Regular.woff2') format('woff2'),
+       url('https://fonts.cdnfonts.com/s/81131/Luthon-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Luthon';
+  src: url('https://fonts.cdnfonts.com/s/81131/Luthon-Bold.woff2') format('woff2'),
+       url('https://fonts.cdnfonts.com/s/81131/Luthon-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Southard';
+  src: url('https://fonts.cdnfonts.com/s/81133/Southard-Regular.woff2') format('woff2'),
+       url('https://fonts.cdnfonts.com/s/81133/Southard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Southard';
+  src: url('https://fonts.cdnfonts.com/s/81133/Southard-Bold.woff2') format('woff2'),
+       url('https://fonts.cdnfonts.com/s/81133/Southard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -51,23 +88,29 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    font-family: 'Southard', sans-serif;
   }
   
   /* Fluid spacing and typography */
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Luthon', serif;
+    @apply font-medium tracking-tight;
+  }
+  
   h1 {
-    @apply text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl;
+    @apply text-4xl md:text-5xl lg:text-6xl;
   }
   
   h2 {
-    @apply text-3xl font-medium tracking-tight md:text-4xl;
+    @apply text-3xl md:text-4xl;
   }
   
   h3 {
-    @apply text-2xl font-medium tracking-tight md:text-3xl;
+    @apply text-2xl md:text-3xl;
   }
   
   h4 {
-    @apply text-xl font-medium tracking-tight md:text-2xl;
+    @apply text-xl md:text-2xl;
   }
   
   p {

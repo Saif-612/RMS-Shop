@@ -59,7 +59,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link 
           to="/" 
-          className="text-2xl font-medium tracking-tight transition-opacity duration-200 hover:opacity-80"
+          className="text-2xl font-display font-medium tracking-tight transition-opacity duration-200 hover:opacity-80"
         >
           Rmس Abayas
         </Link>
