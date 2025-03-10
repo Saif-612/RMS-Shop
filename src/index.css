@@ -3,39 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Luthon Southard Font Duo */
+/* Import Barcelony Font */
 @font-face {
-  font-family: 'Luthon';
-  src: url('https://fonts.cdnfonts.com/s/81131/Luthon-Regular.woff2') format('woff2'),
-       url('https://fonts.cdnfonts.com/s/81131/Luthon-Regular.woff') format('woff');
+  font-family: 'Barcelony';
+  src: url('https://fonts.cdnfonts.com/s/83289/Barcelony.woff2') format('woff2'),
+       url('https://fonts.cdnfonts.com/s/83289/Barcelony.woff') format('woff');
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Luthon';
-  src: url('https://fonts.cdnfonts.com/s/81131/Luthon-Bold.woff2') format('woff2'),
-       url('https://fonts.cdnfonts.com/s/81131/Luthon-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Southard';
-  src: url('https://fonts.cdnfonts.com/s/81133/Southard-Regular.woff2') format('woff2'),
-       url('https://fonts.cdnfonts.com/s/81133/Southard-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Southard';
-  src: url('https://fonts.cdnfonts.com/s/81133/Southard-Bold.woff2') format('woff2'),
-       url('https://fonts.cdnfonts.com/s/81133/Southard-Bold.woff') format('woff');
-  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -88,13 +61,12 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
-    font-family: 'Southard', sans-serif;
   }
   
   /* Fluid spacing and typography */
   h1, h2, h3, h4, .font-display {
-    font-family: 'Luthon', serif;
-    @apply font-medium tracking-tight;
+    font-family: 'Barcelony', serif;
+    @apply tracking-tight;
   }
   
   h1 {

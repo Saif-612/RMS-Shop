@@ -58,8 +58,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Southard', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        display: ['Luthon', 'serif'],
+        sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['Barcelony', 'serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
