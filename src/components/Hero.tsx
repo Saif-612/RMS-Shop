@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <span className="inline-block py-1 px-3 mb-6 text-xs font-medium tracking-wider uppercase border border-border rounded-full animate-fade-in opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
-            New Collection
+            NEW COLLECTION
           </span>
           
           <h1 className="mb-6 animate-fade-in opacity-0 font-display" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>

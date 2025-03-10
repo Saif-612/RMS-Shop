@@ -13,6 +13,7 @@
   font-display: swap;
 }
 
+/* Add a fallback font stack for better rendering */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -65,7 +66,7 @@
   
   /* Fluid spacing and typography */
   h1, h2, h3, h4, .font-display {
-    font-family: 'Barcelony', serif;
+    font-family: 'Barcelony', 'Times New Roman', serif;
     @apply tracking-tight;
   }
   
