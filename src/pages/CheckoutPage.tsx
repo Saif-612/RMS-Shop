@@ -8,6 +8,7 @@ const CheckoutPage = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isProcessing, setIsProcessing] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -59,9 +60,24 @@ const CheckoutPage = () => {
       }
     }
 
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    // Phone validation (basic)
+    if (formData.phone.length < 10) {
+      toast.error("Please enter a valid phone number");
+      return;
+    }
+
+    setIsProcessing(true);
+
     // Create order data
     const orderData = {
-      amount: total * 100, // Razorpay amount is in paisa
+      amount: Math.round(total * 100), // Razorpay amount is in paisa and must be an integer
       currency: "INR",
       receipt: `order_${Date.now()}`,
       customer: {
@@ -102,8 +118,10 @@ const CheckoutPage = () => {
     } catch (error) {
       console.error("Payment failed:", error);
       toast.error("Payment failed", {
-        description: error.message || "Please try again later"
+        description: error.error || "Please try again later"
       });
+    } finally {
+      setIsProcessing(false);
     }
   };
 
@@ -269,13 +287,26 @@ const CheckoutPage = () => {
                 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  disabled={isProcessing}
+                  className="w-full py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 10H21M7 15H8M12 15H13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  Pay ₹{(total * 83).toFixed(2)}
+                  {isProcessing ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Processing...
+                    </>
+                  ) : (
+                    <>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 10H21M7 15H8M12 15H13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      Pay ₹{(total * 83).toFixed(2)}
+                    </>
+                  )}
                 </button>
                 <p className="text-xs text-center text-muted-foreground mt-4">
                   By clicking the button, you agree to our Terms and Conditions

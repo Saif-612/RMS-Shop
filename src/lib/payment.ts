@@ -41,44 +41,71 @@ const createRazorpayOrder = async (orderData: OrderData): Promise<{ id: string }
   };
 };
 
+// Function to check if Razorpay script is already loaded
+const isRazorpayLoaded = (): boolean => {
+  return typeof window !== 'undefined' && !!(window as any).Razorpay;
+};
+
+// Function to load Razorpay script
+const loadRazorpayScript = (): Promise<void> => {
+  if (isRazorpayLoaded()) {
+    return Promise.resolve();
+  }
+
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.async = true;
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error("Failed to load Razorpay SDK"));
+    document.body.appendChild(script);
+  });
+};
+
 export const initPayment = (orderData: OrderData): Promise<PaymentResponse> => {
   return new Promise(async (resolve, reject) => {
     try {
       // In a real-world scenario, this would come from your backend
       const order = await createRazorpayOrder(orderData);
       
-      // Load Razorpay script dynamically
-      const script = document.createElement("script");
-      script.src = "https://checkout.razorpay.com/v1/checkout.js";
-      document.body.appendChild(script);
+      // Load Razorpay script if not already loaded
+      await loadRazorpayScript();
       
-      script.onload = () => {
-        // Initialize Razorpay payment
-        const options = {
-          key: "rzp_test_YOUR_KEY_HERE", // Replace with your actual test key in production
-          amount: orderData.amount,
-          currency: orderData.currency,
-          name: "Abaya Store",
-          description: "Payment for your order",
-          order_id: order.id,
-          handler: function (response: any) {
-            // This handler is called when payment is successful
-            resolve({
-              success: true,
-              paymentId: response.razorpay_payment_id
+      // Initialize Razorpay payment
+      const options = {
+        key: "rzp_test_YourActualTestKey", // Replace with your actual test key
+        amount: orderData.amount,
+        currency: orderData.currency,
+        name: "Abaya Store",
+        description: "Payment for your order",
+        order_id: order.id,
+        handler: function (response: any) {
+          // This handler is called when payment is successful
+          resolve({
+            success: true,
+            paymentId: response.razorpay_payment_id
+          });
+        },
+        prefill: {
+          name: orderData.customer.name,
+          email: orderData.customer.email,
+          contact: orderData.customer.contact
+        },
+        notes: orderData.notes,
+        theme: {
+          color: "#9f7aea" // This should match your primary color
+        },
+        modal: {
+          ondismiss: function() {
+            reject({
+              success: false,
+              error: "Payment cancelled by user"
             });
-          },
-          prefill: {
-            name: orderData.customer.name,
-            email: orderData.customer.email,
-            contact: orderData.customer.contact
-          },
-          notes: orderData.notes,
-          theme: {
-            color: "#9f7aea" // This should match your primary color
           }
-        };
-        
+        }
+      };
+      
+      try {
         // @ts-ignore - Razorpay is loaded via script
         const rzp = new window.Razorpay(options);
         rzp.open();
@@ -87,22 +114,20 @@ export const initPayment = (orderData: OrderData): Promise<PaymentResponse> => {
         rzp.on('payment.failed', function (response: any) {
           reject({
             success: false,
-            error: response.error.description
+            error: response.error.description || "Payment failed"
           });
         });
-      };
-      
-      script.onerror = () => {
+      } catch (error) {
         reject({
           success: false,
-          error: "Failed to load Razorpay SDK"
+          error: error.message || "Failed to initialize Razorpay"
         });
-      };
+      }
       
     } catch (error) {
       reject({
         success: false,
-        error: error.message
+        error: error.message || "An unexpected error occurred"
       });
     }
   });
