@@ -154,3 +154,8 @@
   box-shadow: 0 0 15px rgba(212, 138, 155, 0.3);
 }
 
+/* Ensuring the refresh of the preview */
+.refresh-preview {
+  display: none;
+}
+
