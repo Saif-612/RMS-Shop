@@ -61,28 +61,9 @@
   body {
     @apply bg-background text-foreground font-extralight;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
-    background-image: url('/lovable-uploads/6e254a18-b2c2-4e7b-a045-22b0b97faad2.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 100vh;
-    position: relative;
   }
   
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  main {
-    position: relative;
-    z-index: 1;
-  }
-  
+  /* Fluid spacing and typography */
   h1, h2, h3, h4, .font-display {
     font-family: 'Barcelony', 'Times New Roman', serif;
     @apply tracking-tight font-extralight;
@@ -105,7 +86,7 @@
   }
   
   p {
-    @apply leading-7 font-extralight;
+    @apply leading-7 font-extralight text-foreground/70;
   }
 
   button, a {
@@ -113,20 +94,12 @@
   }
 }
 
+/* Smooth page transitions */
 .page-transition {
   @apply animate-fade-in;
 }
 
-.content-container {
-  position: relative;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(5px);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
+/* Product card hover effects */
 .product-card {
   @apply transition-all duration-300 ease-out;
 }
@@ -135,6 +108,7 @@
   @apply shadow-lg transform -translate-y-1;
 }
 
+/* Button hover effects */
 .btn-hover-effect {
   @apply relative overflow-hidden transition-all ease-out duration-300;
 }
@@ -148,92 +122,12 @@
   @apply opacity-100;
 }
 
+/* Clean, modern layout */
 .container-custom {
   @apply container mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+/* Grid layouts */
 .products-grid {
   @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
-}
-
-.hero-container {
-  background-color: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  max-width: 90%;
-  width: 1000px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
-
-.hero-title {
-  font-family: 'Barcelony', cursive;
-  color: #D946EF;
-  font-size: 3rem;
-  line-height: 1.2;
-  text-align: center;
-  font-weight: normal;
-  margin-bottom: 1.5rem;
-}
-
-.collection-badge {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #D946EF;
-  border: 1px solid #D946EF;
-  border-radius: 50px;
-  padding: 0.5rem 1.5rem;
-  font-size: 0.875rem;
-  display: inline-block;
-  margin-bottom: 1.5rem;
-}
-
-.hero-description {
-  color: #333;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
-  font-size: 1.125rem;
-}
-
-.shop-button {
-  background-color: #D946EF;
-  color: white;
-  padding: 0.75rem 2rem;
-  border-radius: 50px;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  transition: all 0.3s ease;
-  margin-right: 1rem;
-}
-
-.shop-button:hover {
-  background-color: #c026d3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(217, 70, 239, 0.3);
-}
-
-.story-button {
-  background-color: rgba(217, 70, 239, 0.1);
-  color: #333;
-  padding: 0.75rem 2rem;
-  border-radius: 50px;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-
-.story-button:hover {
-  background-color: rgba(217, 70, 239, 0.2);
-  transform: translateY(-2px);
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
 }
