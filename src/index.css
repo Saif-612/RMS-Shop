@@ -60,14 +60,14 @@
   }
   
   body {
-    @apply bg-background text-foreground font-light;
+    @apply bg-background text-foreground font-extralight;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   }
   
   /* Fluid spacing and typography */
   h1, h2, h3, h4, .font-display {
     font-family: 'Barcelony', 'Times New Roman', serif;
-    @apply tracking-tight font-light;
+    @apply tracking-tight font-extralight;
   }
   
   h1 {
@@ -75,23 +75,23 @@
   }
   
   h2 {
-    @apply text-3xl md:text-4xl font-light;
+    @apply text-3xl md:text-4xl font-extralight;
   }
   
   h3 {
-    @apply text-2xl md:text-3xl font-light;
+    @apply text-2xl md:text-3xl font-extralight;
   }
   
   h4 {
-    @apply text-xl md:text-2xl font-light;
+    @apply text-xl md:text-2xl font-extralight;
   }
   
   p {
-    @apply leading-7 font-light text-foreground/80;
+    @apply leading-7 font-extralight text-foreground/70;
   }
 
   button, a {
-    @apply font-normal;
+    @apply font-light;
   }
 }
 

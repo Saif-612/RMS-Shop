@@ -32,18 +32,18 @@ const Hero = () => {
             NEW COLLECTION
           </span>
           
-          <h1 className="mb-6 animate-fade-in opacity-0 font-display text-foreground text-shadow-sm" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
+          <h1 className="mb-6 animate-fade-in opacity-0 font-display text-foreground text-shadow-sm font-extralight" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
             Elegant Abayas for Modern Women
           </h1>
           
-          <p className="text-lg text-foreground/80 mb-8 animate-fade-in opacity-0 text-shadow-sm" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
+          <p className="text-lg text-foreground/70 mb-8 animate-fade-in opacity-0 text-shadow-sm font-extralight" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
             Discover our curated collection of premium abayas, crafted with exceptional attention to detail and sustainable materials.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 animate-fade-in opacity-0" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
             <Link 
               to="/products" 
-              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-primary text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-md"
+              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-primary text-primary-foreground font-light transition-all hover:bg-primary/90 hover:shadow-md"
             >
               Shop Collection
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -51,7 +51,7 @@ const Hero = () => {
             
             <Link 
               to="/about" 
-              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-accent/30 text-foreground transition-all hover:bg-accent/50 hover:shadow-md"
+              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-accent/30 text-foreground font-light transition-all hover:bg-accent/50 hover:shadow-md"
             >
               Our Story
             </Link>
@@ -77,7 +77,7 @@ const Hero = () => {
           
           {/* Floating text badge */}
           <div className="absolute bottom-8 right-8 bg-background/90 backdrop-blur-sm py-3 px-6 rounded-full shadow-lg transform rotate-2 border border-primary/20">
-            <span className="font-display text-lg text-primary">New Season 2023</span>
+            <span className="font-display text-lg text-primary font-extralight">New Season 2023</span>
           </div>
         </div>
       </div>

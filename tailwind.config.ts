@@ -23,6 +23,11 @@ export default {
       }
     },
     extend: {
+      fontWeight: {
+        extralight: '200',
+        light: '300',
+        normal: '400',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
