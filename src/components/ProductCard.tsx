@@ -18,7 +18,7 @@ const ProductCard = ({ product, className, index = 0 }: ProductCardProps) => {
   return (
     <div 
       className={cn(
-        "group relative product-card rounded-xl overflow-hidden bg-white animate-fade-in opacity-0 shadow-md", 
+        "group relative product-card rounded-xl overflow-hidden bg-white animate-fade-in opacity-0 shadow-md hover:shadow-xl", 
         className
       )}
       style={{ animationDelay, animationFillMode: "forwards" }}
@@ -60,7 +60,7 @@ const ProductCard = ({ product, className, index = 0 }: ProductCardProps) => {
         </Link>
         <p className="text-sm text-muted-foreground mb-2">{product.category}</p>
         <div className="flex justify-between items-center">
-          <span className="font-medium">${product.price.toFixed(2)}</span>
+          <span className="font-medium text-primary">${product.price.toFixed(2)}</span>
           <div className="flex space-x-1">
             {product.colors.slice(0, 3).map((color, i) => (
               <span 
