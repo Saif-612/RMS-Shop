@@ -18,7 +18,7 @@ const ProductCard = ({ product, className, index = 0 }: ProductCardProps) => {
   return (
     <div 
       className={cn(
-        "group relative product-card rounded-xl overflow-hidden bg-white animate-fade-in opacity-0", 
+        "group relative product-card rounded-xl overflow-hidden bg-white animate-fade-in opacity-0 shadow-md", 
         className
       )}
       style={{ animationDelay, animationFillMode: "forwards" }}
@@ -35,13 +35,13 @@ const ProductCard = ({ product, className, index = 0 }: ProductCardProps) => {
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300">
           <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
             <button 
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-md text-primary hover:bg-primary hover:text-white transition-colors"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-lg text-primary hover:bg-primary hover:text-white transition-colors"
               aria-label="Add to cart"
             >
               <ShoppingBag size={18} />
             </button>
             <button 
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-md text-primary hover:bg-primary hover:text-white transition-colors"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-lg text-primary hover:bg-primary hover:text-white transition-colors"
               aria-label="Add to wishlist"
             >
               <Heart size={18} />
@@ -65,7 +65,7 @@ const ProductCard = ({ product, className, index = 0 }: ProductCardProps) => {
             {product.colors.slice(0, 3).map((color, i) => (
               <span 
                 key={i}
-                className="w-3 h-3 rounded-full border border-border" 
+                className="w-3 h-3 rounded-full border border-border shadow-sm" 
                 style={{ 
                   backgroundColor: color.toLowerCase(),
                   opacity: color.toLowerCase() === "white" ? 0.8 : 1

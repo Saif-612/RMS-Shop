@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -12,9 +13,9 @@ const Hero = () => {
         <div className="absolute bottom-1/3 -right-64 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
         
         {/* Decorative patterns */}
-        <div className="absolute top-20 right-40 w-64 h-64 border border-primary/10 rounded-full"></div>
-        <div className="absolute top-40 right-60 w-32 h-32 border border-accent/20 rounded-full"></div>
-        <div className="absolute bottom-40 left-20 w-48 h-48 border border-primary/10 rounded-full"></div>
+        <div className="absolute top-20 right-40 w-64 h-64 border border-primary/10 rounded-full shadow-subtle"></div>
+        <div className="absolute top-40 right-60 w-32 h-32 border border-accent/20 rounded-full shadow-subtle"></div>
+        <div className="absolute bottom-40 left-20 w-48 h-48 border border-primary/10 rounded-full shadow-subtle"></div>
         
         {/* Subtle texture overlay */}
         <div className="absolute inset-0 opacity-20" 
@@ -27,17 +28,17 @@ const Hero = () => {
 
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <span className="inline-block py-1 px-3 mb-6 text-xs tracking-wider uppercase border border-primary/40 text-primary rounded-full animate-fade-in opacity-0 bg-background/70 backdrop-blur-sm" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
+          <span className="inline-block py-1 px-3 mb-6 text-xs tracking-wider uppercase border border-primary/40 text-primary rounded-full animate-fade-in opacity-0 bg-background/70 backdrop-blur-sm shadow-sm" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
             NEW COLLECTION
           </span>
           
-          <h1 className="mb-6 animate-fade-in opacity-0 font-display text-3xl md:text-4xl lg:text-5xl" style={{ 
+          <h1 className="mb-6 animate-fade-in opacity-0 font-display text-3xl md:text-4xl lg:text-5xl text-shadow-elegant" style={{ 
             animationDelay: "0.2s", 
             animationFillMode: "forwards",
             letterSpacing: "0.02em",
             fontStyle: "italic",
             color: "#D946EF",
-            textShadow: "none",
+            textShadow: "0 4px 12px rgba(217, 70, 239, 0.2)",
             fontWeight: "normal"
           }}>
             Elegant Abayas for Modern Women
@@ -50,7 +51,7 @@ const Hero = () => {
           <div className="flex flex-wrap justify-center gap-4 animate-fade-in opacity-0" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
             <Link 
               to="/products" 
-              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-primary text-primary-foreground font-light transition-all hover:bg-primary/90 hover:shadow-md"
+              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-primary text-primary-foreground font-light transition-all hover:bg-primary/90 hover:shadow-lg shadow-md"
             >
               Shop Collection
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -58,7 +59,7 @@ const Hero = () => {
             
             <Link 
               to="/about" 
-              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-accent/30 text-foreground font-light transition-all hover:bg-accent/50 hover:shadow-md"
+              className="inline-flex items-center justify-center py-3 px-6 rounded-full bg-accent/30 text-foreground font-light transition-all hover:bg-accent/50 hover:shadow-lg shadow-sm"
             >
               Our Story
             </Link>
@@ -68,12 +69,12 @@ const Hero = () => {
       
       {/* Hero image with animation and decorative elements */}
       <div className="container-custom mt-20 md:mt-24">
-        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-xl overflow-hidden shadow-2xl animate-fade-in opacity-0" style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}>
+        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-xl overflow-hidden shadow-floating animate-fade-in opacity-0" style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}>
           {/* Decorative corner elements */}
-          <div className="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-accent/40 rounded-tl-xl"></div>
-          <div className="absolute top-0 right-0 w-24 h-24 border-r-2 border-t-2 border-accent/40 rounded-tr-xl"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 border-l-2 border-b-2 border-accent/40 rounded-bl-xl"></div>
-          <div className="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-accent/40 rounded-br-xl"></div>
+          <div className="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-accent/40 rounded-tl-xl shadow-sm"></div>
+          <div className="absolute top-0 right-0 w-24 h-24 border-r-2 border-t-2 border-accent/40 rounded-tr-xl shadow-sm"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 border-l-2 border-b-2 border-accent/40 rounded-bl-xl shadow-sm"></div>
+          <div className="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-accent/40 rounded-br-xl shadow-sm"></div>
           
           <img 
             src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80" 
@@ -83,7 +84,7 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-foreground/10"></div>
           
           {/* Floating text badge */}
-          <div className="absolute bottom-8 right-8 bg-background/90 backdrop-blur-sm py-3 px-6 rounded-full shadow-lg transform rotate-2 border border-primary/20">
+          <div className="absolute bottom-8 right-8 bg-background/90 backdrop-blur-sm py-3 px-6 rounded-full shadow-lg transform rotate-2 border border-primary/20 glow-effect">
             <span className="font-display text-lg text-primary font-extralight">New Season 2023</span>
           </div>
         </div>
