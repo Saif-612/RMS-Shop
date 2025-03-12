@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -61,6 +62,22 @@
   body {
     @apply bg-background text-foreground font-extralight;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    background-image: url('/lovable-uploads/97e3c70c-02ad-453b-8d75-405c82282e6b.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
   }
   
   /* Fluid spacing and typography */
@@ -97,6 +114,17 @@
 /* Smooth page transitions */
 .page-transition {
   @apply animate-fade-in;
+}
+
+/* Content container that should go on top of the background */
+.content-container {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Product card hover effects */
