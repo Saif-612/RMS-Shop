@@ -18,7 +18,7 @@ const ProductCard = ({ product, className, index = 0 }: ProductCardProps) => {
   return (
     <div 
       className={cn(
-        "group relative product-card rounded-xl overflow-hidden bg-white animate-fade-in opacity-0 shadow-lg hover:shadow-xl transition-all duration-300", 
+        "group relative product-card rounded-xl overflow-hidden bg-white animate-fade-in opacity-0 shadow-md hover:shadow-xl", 
         className
       )}
       style={{ animationDelay, animationFillMode: "forwards" }}
@@ -29,11 +29,6 @@ const ProductCard = ({ product, className, index = 0 }: ProductCardProps) => {
           src={product.images[0]}
           alt={product.name}
           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-          onError={(e) => {
-            // Fallback to placeholder if image fails to load
-            const target = e.target as HTMLImageElement;
-            target.src = "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=800";
-          }}
         />
         
         {/* Quick actions overlay */}
