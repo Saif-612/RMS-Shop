@@ -63,20 +63,24 @@
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
     background-image: url('/lovable-uploads/6e254a18-b2c2-4e7b-a045-22b0b97faad2.png');
     background-size: cover;
-    background-attachment: fixed;
     background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
     position: relative;
   }
   
-  body::before {
+  body::after {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
   }
   
   h1, h2, h3, h4, .font-display {
