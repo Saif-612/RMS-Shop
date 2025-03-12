@@ -31,14 +31,14 @@ const Hero = () => {
             NEW COLLECTION
           </span>
           
-          <h1 className="mb-6 animate-fade-in opacity-0 font-display text-3xl md:text-4xl lg:text-5xl font-extralight" style={{ 
+          <h1 className="mb-6 animate-fade-in opacity-0 font-display text-3xl md:text-4xl lg:text-5xl" style={{ 
             animationDelay: "0.2s", 
             animationFillMode: "forwards",
-            letterSpacing: "0.05em",
+            letterSpacing: "0.02em",
             fontStyle: "italic",
-            transform: "rotate(-2deg)",
-            textShadow: "1px 1px 3px rgba(0,0,0,0.3)",
-            color: "#fff"
+            color: "#D946EF",
+            textShadow: "none",
+            fontWeight: "normal"
           }}>
             Elegant Abayas for Modern Women
           </h1>
