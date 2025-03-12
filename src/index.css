@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -71,7 +70,7 @@
   
   body::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -80,7 +79,6 @@
     z-index: -1;
   }
   
-  /* Fluid spacing and typography */
   h1, h2, h3, h4, .font-display {
     font-family: 'Barcelony', 'Times New Roman', serif;
     @apply tracking-tight font-extralight;
@@ -111,12 +109,10 @@
   }
 }
 
-/* Smooth page transitions */
 .page-transition {
   @apply animate-fade-in;
 }
 
-/* Content container that should go on top of the background */
 .content-container {
   position: relative;
   z-index: 1;
@@ -127,7 +123,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* Product card hover effects */
 .product-card {
   @apply transition-all duration-300 ease-out;
 }
@@ -136,7 +131,6 @@
   @apply shadow-lg transform -translate-y-1;
 }
 
-/* Button hover effects */
 .btn-hover-effect {
   @apply relative overflow-hidden transition-all ease-out duration-300;
 }
@@ -150,17 +144,14 @@
   @apply opacity-100;
 }
 
-/* Clean, modern layout */
 .container-custom {
   @apply container mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-/* Grid layouts */
 .products-grid {
   @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
 }
 
-/* Hero specific styles */
 .hero-container {
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(5px);
