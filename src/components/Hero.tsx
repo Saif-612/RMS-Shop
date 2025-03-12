@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -32,13 +31,13 @@ const Hero = () => {
             NEW COLLECTION
           </span>
           
-          <h1 className="mb-6 animate-fade-in opacity-0 font-display text-white text-6xl md:text-7xl lg:text-8xl font-extralight" style={{ 
+          <h1 className="mb-6 animate-fade-in opacity-0 font-display text-4xl md:text-5xl lg:text-6xl font-extralight bg-gradient-to-br from-white via-white/90 to-white/70 bg-clip-text text-transparent" style={{ 
             animationDelay: "0.2s", 
             animationFillMode: "forwards",
             letterSpacing: "0.05em",
             fontStyle: "italic",
             transform: "rotate(-2deg)",
-            textShadow: "2px 2px 4px rgba(0,0,0,0.1)"
+            textShadow: "none"
           }}>
             Elegant Abayas for Modern Women
           </h1>
