@@ -7,26 +7,16 @@ import { featuredProducts } from "@/lib/data";
 
 const FeaturedProducts = () => {
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-20 bg-white">
       <div className="container-custom">
         {/* Section header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
-          <div>
-            <h2 className="mb-4 animate-slide-in opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
-              Featured Collection
-            </h2>
-            <p className="text-muted-foreground max-w-xl animate-slide-in opacity-0" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
-              Our most popular pieces, carefully selected for their exceptional quality and timeless design.
-            </p>
-          </div>
-          <Link 
-            to="/products" 
-            className="mt-4 md:mt-0 inline-flex items-center text-sm font-medium hover:underline animate-slide-in opacity-0"
-            style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
-          >
-            View All Products
-            <ArrowRight size={16} className="ml-1" />
-          </Link>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-light mb-4 animate-slide-in opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
+            Featured Collection
+          </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto animate-slide-in opacity-0" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
+            Our most popular abayas, crafted with premium fabrics and timeless designs.
+          </p>
         </div>
         
         {/* Products grid */}
@@ -38,6 +28,15 @@ const FeaturedProducts = () => {
               index={index}
             />
           ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <Link 
+            to="/products" 
+            className="momiinah-button inline-block"
+          >
+            View All Products
+          </Link>
         </div>
       </div>
     </section>
