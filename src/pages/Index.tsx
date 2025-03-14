@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import Hero from "@/components/Hero";
 import FeaturedProducts from "@/components/FeaturedProducts";
